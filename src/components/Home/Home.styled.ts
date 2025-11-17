@@ -1,143 +1,139 @@
-import { styled } from "@mui/material/styles";
-import Button from "@mui/material/Button";
+import styled from "styled-components";
 
-export const PageWrapper = styled("div")({
-  width: "100%",
-  minHeight: "100vh",
-  background: "#f7fafc",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  paddingBottom: "60px",
-  boxSizing: "border-box",
-  fontFamily:
-    "'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
-});
+export const PageWrapper = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  background: #f7fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  font-family: ${({ theme }) => theme.fonts.family};
+`;
 
-export const Hero = styled("section")(({ theme }) => ({
-  width: "100%",
-  maxWidth: "1200px",
-  marginTop: "32px",
-  display: "grid",
-  gridTemplateColumns: "1fr 460px",
-  gap: "32px",
-  alignItems: "center",
-  padding: "36px",
-  boxSizing: "border-box",
+export const Hero = styled.section`
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 460px;
+  gap: 32px;
+  align-items: center;
+  padding: 36px;
+  box-sizing: border-box;
 
-  [theme.breakpoints.down("md")]: {
-    gridTemplateColumns: "1fr",
-    padding: "20px",
-  },
-}));
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+`;
 
-export const HeroLeft = styled("div")(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  gap: "20px",
-  paddingRight: "8px",
+export const HeroLeft = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-right: 8px;
 
-  [theme.breakpoints.down("md")]: {
-    textAlign: "center",
-    alignItems: "center",
-    paddingRight: 0,
-  },
-}));
+  @media (max-width: 960px) {
+    text-align: center;
+    align-items: center;
+    padding-right: 0;
+  }
+`;
 
-export const Title = styled("h1")(({ theme }) => ({
-  fontSize: "40px",
-  lineHeight: 1.05,
-  margin: 0,
-  color: "#0f172a",
-  fontWeight: 800,
+export const Title = styled.h1`
+  font-size: 40px;
+  line-height: 1.05;
+  margin: 0;
+  color: ${({ theme }) => theme.colors.black};
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
 
-  [theme.breakpoints.down("md")]: {
-    fontSize: "28px",
-  },
-}));
+  @media (max-width: 960px) {
+    font-size: 28px;
+  }
+`;
 
-export const Subtitle = styled("p")(({ theme }) => ({
-  margin: 0,
-  color: "#374151",
-  fontSize: "16px",
-  maxWidth: "680px",
-}));
+export const Subtitle = styled.p`
+  margin: 0;
+  color: ${({ theme }) => theme.colors.gray};
+  font-size: 16px;
+  max-width: 680px;
+`;
 
-export const Actions = styled("div")(({ theme }) => ({
-  display: "flex",
-  gap: "12px",
-  marginTop: "8px",
+export const Actions = styled.div`
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
 
-  [theme.breakpoints.down("md")]: {
-    flexDirection: "column",
-    width: "100%",
-    alignItems: "center",
-  },
-}));
+  @media (max-width: 960px) {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+`;
 
+export const HeroRight = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
+export const Illustration = styled.img`
+  width: 100%;
+  max-width: 420px;
+  border-radius: ${({ theme }) => theme.radius.lg};
+  box-shadow: ${({ theme }) => theme.shadow.card};
+  object-fit: cover;
+`;
 
-export const HeroRight = styled("div")(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
+export const Features = styled.section`
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 24px;
+  box-sizing: border-box;
 
-export const Illustration = styled("img")(({ theme }) => ({
-  width: "100%",
-  maxWidth: "420px",
-  borderRadius: "16px",
-  boxShadow: "0 20px 40px rgba(2,6,23,0.08)",
-  objectFit: "cover",
-}));
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+  }
+`;
 
-export const Features = styled("section")(({ theme }) => ({
-  width: "100%",
-  maxWidth: "1200px",
-  marginTop: "36px",
-  display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
-  gap: "20px",
-  padding: "0 24px",
-  boxSizing: "border-box",
+export const FeatureCard = styled.div`
+  background: ${({ theme }) => theme.colors.white};
+  border-radius: ${({ theme }) => theme.radius.md};
+  padding: 20px;
+  box-shadow: ${({ theme }) => theme.shadow.card};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+`;
 
-  [theme.breakpoints.down("md")]: {
-    gridTemplateColumns: "1fr",
-  },
-}));
+export const FeatureIcon = styled.div`
+  color: #4f46e5;
+  background: rgba(79, 70, 229, 0.08);
+  width: 64px;
+  height: 64px;
+  border-radius: ${({ theme }) => theme.radius.md};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
-export const FeatureCard = styled("div")(({ theme }) => ({
-  background: "#fff",
-  borderRadius: "14px",
-  padding: "20px",
-  boxShadow: "0 8px 24px rgba(2,6,23,0.06)",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  gap: "12px",
-  textAlign: "center",
-}));
+export const FeatureTitle = styled.h3`
+  margin: 0;
+  font-size: 18px;
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
+  color: ${({ theme }) => theme.colors.black};
+`;
 
-export const FeatureIcon = styled("div")(({ theme }) => ({
-  color: "#4f46e5",
-  background: "rgba(79,70,229,0.08)",
-  width: "64px",
-  height: "64px",
-  borderRadius: "12px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-export const FeatureTitle = styled("h3")(({ theme }) => ({
-  margin: 0,
-  fontSize: "18px",
-  fontWeight: 700,
-  color: "#0f172a",
-}));
-
-export const FeatureText = styled("p")(({ theme }) => ({
-  margin: 0,
-  fontSize: "14px",
-  color: "#6b7280",
-}));
+export const FeatureText = styled.p`
+  margin: 0;
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.gray};
+`;
