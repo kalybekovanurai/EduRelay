@@ -43,7 +43,7 @@ export default function Footer() {
 
           <FooterColumn>
             <FooterTitle>Контакты</FooterTitle>
-            <FooterText>Кыргызский национальный университет</FooterText>
+            <FooterText>+996555875625</FooterText>
             <FooterText>Email: nnur28515@gmail.com</FooterText>
           </FooterColumn>
         </FooterLinks>
