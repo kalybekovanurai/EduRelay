@@ -1,24 +1,27 @@
-import { NavLink } from "react-router-dom";
-import { NavContainer, NavItem } from "./Navbar.styled";
+import { NavContainer, NavItem, MobileMenu } from "./Navbar.styled";
 
-export default function Navbar() {
+export default function Navbar({ isMobile, menuOpen }: any) {
+  if (!isMobile) {
+    return (
+      <NavContainer className="desktop">
+        <NavItem to="/" end>
+          Home
+        </NavItem>
+        <NavItem to="/students">Students</NavItem>
+        <NavItem to="/about">About</NavItem>
+        <NavItem to="/contacts">Contacts</NavItem>
+      </NavContainer>
+    );
+  }
+
   return (
-    <NavContainer>
-      <NavItem as={NavLink} to="/" end>
+    <MobileMenu menuOpen={menuOpen}>
+      <NavItem to="/" end>
         Home
       </NavItem>
-
-      <NavItem as={NavLink} to="/students">
-        Students
-      </NavItem>
-
-      <NavItem as={NavLink} to="/about">
-        About
-      </NavItem>
-
-      <NavItem as={NavLink} to="/contacts">
-        Contacts
-      </NavItem>
-    </NavContainer>
+      <NavItem to="/students">Students</NavItem>
+      <NavItem to="/about">About</NavItem>
+      <NavItem to="/contacts">Contacts</NavItem>
+    </MobileMenu>
   );
 }

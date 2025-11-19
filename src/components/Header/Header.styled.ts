@@ -15,13 +15,20 @@ export const HeaderContainer = styled("header")(() => ({
   position: "sticky",
   top: 0,
   zIndex: 1000,
-}));
 
+  "@media (max-width: 768px)": {
+    padding: "0 20px",
+  },
+}));
 
 export const NavActions = styled("div")({
   display: "flex",
   alignItems: "center",
   gap: "16px",
+
+  "@media (max-width: 768px)": {
+    gap: "8px",
+  },
 });
 
 export const LoginButton = styled(Button)({
@@ -34,5 +41,21 @@ export const LoginButton = styled(Button)({
   "&:hover": {
     borderColor: "#2f63cc",
     background: "rgba(58, 123, 255, 0.08)",
+  },
+
+  "@media (max-width: 768px)": {
+    display: "none",
+  },
+});
+
+export const BurgerButton = styled("button")({
+  display: "none",
+  fontSize: "28px",
+  border: "none",
+  background: "none",
+  cursor: "pointer",
+
+  "@media (max-width: 768px)": {
+    display: "block",
   },
 });
