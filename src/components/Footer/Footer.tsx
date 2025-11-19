@@ -1,3 +1,4 @@
+// src/components/Footer/Footer.tsx
 import {
   FooterContainer,
   FooterTop,
@@ -9,6 +10,7 @@ import {
   FooterTitle,
   FooterText,
   FooterLink,
+  FooterExternalLink,
 } from "./Footer.styled";
 
 export default function Footer() {
@@ -25,28 +27,30 @@ export default function Footer() {
         <FooterLinks>
           <FooterColumn>
             <FooterTitle>Навигация</FooterTitle>
-            <FooterLink href="/">Home</FooterLink>
-            <FooterLink href="/students">Students</FooterLink>
-            {/* <FooterLink href="/matches">Matches</FooterLink> */}
+
+            <FooterLink to="/">Home</FooterLink>
+            <FooterLink to="/students">Students</FooterLink>
+            <FooterLink to="/about">About</FooterLink>
+            <FooterLink to="/contacts">Contacts</FooterLink>
           </FooterColumn>
 
           <FooterColumn>
             <FooterTitle>Проект</FooterTitle>
-            <FooterLink href="#">О нас</FooterLink>
-            <FooterLink href="#">Документы</FooterLink>
-            <FooterLink href="#">FAQ</FooterLink>
+            <FooterExternalLink href="#">О нас</FooterExternalLink>
+            <FooterExternalLink href="#">Документы</FooterExternalLink>
+            <FooterExternalLink href="#">FAQ</FooterExternalLink>
           </FooterColumn>
 
           <FooterColumn>
             <FooterTitle>Контакты</FooterTitle>
             <FooterText>Кыргызский национальный университет</FooterText>
-            <FooterText>Email: support@edurelay.com</FooterText>
+            <FooterText>Email: nnur28515@gmail.com</FooterText>
           </FooterColumn>
         </FooterLinks>
       </FooterTop>
 
       <FooterBottom>
-        © {new Date().getFullYear()} EduRelay. Все права защищены.
+        © {new Date().getFullYear()} EduRelay
       </FooterBottom>
     </FooterContainer>
   );

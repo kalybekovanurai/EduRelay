@@ -1,4 +1,6 @@
+// src/components/Footer/Footer.styled.ts
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const FooterContainer = styled.footer`
   background: #f7f9fc;
@@ -58,7 +60,22 @@ export const FooterTitle = styled.h4`
   color: #111827;
 `;
 
-export const FooterLink = styled.a`
+/* 🔵 SPA-Навигация */
+export const FooterLink = styled(Link)`
+  display: block;
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: 0.2s;
+
+  &:hover {
+    color: #2563eb;
+  }
+`;
+
+/* 🔗 Внешние ссылки */
+export const FooterExternalLink = styled.a`
   display: block;
   font-size: 15px;
   color: #4b5563;

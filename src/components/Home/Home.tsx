@@ -1,6 +1,6 @@
 import React from "react";
 
-
+import HomeImage from "../../assets/Images/HomePageImage.avif";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import LoopIcon from "@mui/icons-material/Loop";
 import PeopleIcon from "@mui/icons-material/People";
@@ -37,14 +37,10 @@ const Home: React.FC = () => {
             <PrimaryButton>Хочу учиться</PrimaryButton>
             <SecondaryButton>Хочу делиться</SecondaryButton>
           </Actions>
-
         </HeroLeft>
 
         <HeroRight>
-          <Illustration
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1f9f5c0a0f2a9f2d6b4a5c3fb1c0f2e2"
-            alt="student-illustration"
-          />
+          <Illustration src={HomeImage} alt="student-illustration" />
         </HeroRight>
       </Hero>
 

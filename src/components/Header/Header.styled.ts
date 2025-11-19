@@ -17,13 +17,6 @@ export const HeaderContainer = styled("header")(() => ({
   zIndex: 1000,
 }));
 
-export const Logo = styled("h1")({
-  fontSize: "26px",
-  fontWeight: 700,
-  color: "#1d1d1d",
-  cursor: "pointer",
-  userSelect: "none",
-});
 
 export const NavActions = styled("div")({
   display: "flex",

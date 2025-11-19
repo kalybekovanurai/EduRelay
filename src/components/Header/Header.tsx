@@ -1,10 +1,13 @@
+import Logo from "../../assets/Icons/EduRelayLogo.png";
 import Navbar from "../Navbar/Navbar";
-import { HeaderContainer, LoginButton, Logo, NavActions } from "./Header.styled";
+import { HeaderContainer, LoginButton, NavActions } from "./Header.styled";
+import { LogoImg } from "./LogoImg.styled";
+
 
 const Header = () => {
   return (
     <HeaderContainer>
-      <Logo>EduRelay</Logo>
+   <LogoImg src={Logo} alt="EduRelay Logo" />
 
       <Navbar />
 
