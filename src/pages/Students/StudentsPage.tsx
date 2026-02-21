@@ -15,11 +15,11 @@ import {
 
 import { useAppDispatch, useAppSelector } from "../../stores/hooks";
 import { getStudentsThunk } from "../../stores/slices/students/studentsThunk";
+import { LoadingPage } from "../../utils/loadingPage/LoadingPage";
 
 export const StudentsPage = () => {
   const dispatch = useAppDispatch();
-  const { students } = useAppSelector((state) => state.student);
-
+  const { students, loading } = useAppSelector((state) => state.student); 
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -59,12 +59,16 @@ export const StudentsPage = () => {
     }
   };
 
+    if (loading) {
+      return <LoadingPage/>;
+    }
+
   return (
     <StudentsWrapper>
       <PageTitle>Students</PageTitle>
 
       <SearchInput
-        placeholder="Search by name, major, skills..."
+        placeholder="Поиск по имени, специальности, навыкам..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
