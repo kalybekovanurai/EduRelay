@@ -65,7 +65,7 @@ export const StudentsPage = () => {
 
   return (
     <StudentsWrapper>
-      <PageTitle>Students</PageTitle>
+      <PageTitle>Студенты</PageTitle>
 
       <SearchInput
         placeholder="Поиск по имени, специальности, навыкам..."
@@ -89,7 +89,7 @@ export const StudentsPage = () => {
 
       <PaginationWrapper>
         <button disabled={currentPage === 1} onClick={goPrev}>
-          Previous
+          ❮
         </button>
 
         <span>
@@ -97,7 +97,7 @@ export const StudentsPage = () => {
         </span>
 
         <button disabled={currentPage === totalPages} onClick={goNext}>
-          Next
+          ❯
         </button>
       </PaginationWrapper>
 

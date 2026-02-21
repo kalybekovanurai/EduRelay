@@ -43,13 +43,16 @@ export const LoginButton = styled(Button)({
   borderColor: "#3A7BFF",
   color: "#3A7BFF",
   fontWeight: 500,
+
   "&:hover": {
     borderColor: "#2f63cc",
     background: "rgba(58, 123, 255, 0.08)",
   },
 
   "@media (max-width: 768px)": {
-    display: "none",
+    display: "inline-flex",
+    padding: "4px 12px",
+    fontSize: "13px",
   },
 });
 
@@ -66,7 +69,7 @@ export const BurgerButton = styled("button")({
 });
 
 export const UserBlock = styled("div")({
-  position: "relative",
+  position: "relative", // важно!
   cursor: "pointer",
   display: "flex",
   alignItems: "center",
@@ -74,7 +77,7 @@ export const UserBlock = styled("div")({
 });
 
 export const UserAvatar = styled("img")({
-  width: "32px", 
+  width: "32px",
   height: "32px",
   borderRadius: "50%",
   objectFit: "cover",
@@ -87,23 +90,25 @@ export const UserName = styled("span")({
 });
 
 export const UserMenu = styled("div")({
-  position: "absolute",
-  top: "100%",
+  position: "absolute", 
+  top: "45px", 
   right: 0,
   background: "#fff",
   border: "1px solid #e3e3e3",
   borderRadius: "8px",
-  boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+  boxShadow: "0 4px 12px rgba(0,0,0,0.12)",
   padding: "8px 0",
-  minWidth: "120px",
-  zIndex: 100,
+  minWidth: "140px",
+  zIndex: 2000,
 });
 
 export const UserMenuItem = styled("div")<{ color?: string }>(({ color }) => ({
-  padding: "8px 16px",
+  padding: "10px 16px",
   cursor: "pointer",
   fontSize: "14px",
   color: color || "#000",
+  transition: "0.2s",
+
   "&:hover": {
     background: "#f5f5f5",
   },

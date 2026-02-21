@@ -5,11 +5,11 @@ export const Navbar = ({ isMobile, menuOpen }: any) => {
     return (
       <NavContainer className="desktop">
         <NavItem to="/" end>
-          Home
+          Главная
         </NavItem>
-        <NavItem to="/students">Students</NavItem>
-        <NavItem to="/about">About</NavItem>
-        <NavItem to="/contacts">Contacts</NavItem>
+        <NavItem to="/students">Студенты</NavItem>
+        <NavItem to="/about">О нас</NavItem>
+        <NavItem to="/contacts">Контакты</NavItem>
       </NavContainer>
     );
   }
@@ -19,9 +19,9 @@ export const Navbar = ({ isMobile, menuOpen }: any) => {
       <NavItem to="/" end>
         Home
       </NavItem>
-      <NavItem to="/students">Students</NavItem>
-      <NavItem to="/about">About</NavItem>
-      <NavItem to="/contacts">Contacts</NavItem>
+      <NavItem to="/students">Студенты</NavItem>
+      <NavItem to="/about">О нас</NavItem>
+      <NavItem to="/contacts">Контакты</NavItem>
     </MobileMenu>
   );
 };

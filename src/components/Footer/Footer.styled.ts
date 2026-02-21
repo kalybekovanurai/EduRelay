@@ -1,4 +1,3 @@
-// src/components/Footer/Footer.styled.ts
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 

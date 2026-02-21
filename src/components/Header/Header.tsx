@@ -24,7 +24,7 @@ export const Header = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
 
-  const { isAuth, user, loading } = useAppSelector((state) => state.auth);
+  const { isAuth, user, loading  } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
