@@ -25,7 +25,7 @@ export default function ContactsPage() {
         </PersonCard>
 
         <PersonCard>
-          <h3>Маматова Нурайым</h3>
+          <h3>Мурзабекова Аруукезирек</h3>
           <p>
             Backend Developer — разрабатывает серверную часть, API и базу
             данных.

@@ -1,5 +1,4 @@
 import React from "react";
-
 import HomeImage from "../../assets/Images/HomePageImage.avif";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import LoopIcon from "@mui/icons-material/Loop";
@@ -20,9 +19,12 @@ import {
   FeatureText,
 } from "./Home.styled";
 import { PrimaryButton } from "../../UI/Buttons/PrimaryButton";
-import { SecondaryButton } from "../../UI/Buttons/SecondaryButton";
+
+import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
+  const navigate = useNavigate(); 
+
   return (
     <PageWrapper>
       <Hero>
@@ -34,8 +36,9 @@ const Home: React.FC = () => {
           </Subtitle>
 
           <Actions>
-            <PrimaryButton>Хочу учиться</PrimaryButton>
-            <SecondaryButton>Хочу делиться</SecondaryButton>
+            <PrimaryButton onClick={() => navigate("/students")}>
+              Хочу учиться
+            </PrimaryButton>
           </Actions>
         </HeroLeft>
 
