@@ -3,7 +3,7 @@ import { StudentsPage } from "../pages/Students/StudentsPage";
 import { StudentProfile } from "../pages/Students/StudentProfile";
 import { About } from "../pages/About/About";
 import { ContactsPage } from "../pages/Contacts/ContactsPage";
-import { Home } from "../components/home/Home";
+import { Home } from "../components/Home/Home";
 
 export default function AppRouter() {
   return (
