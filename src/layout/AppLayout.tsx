@@ -1,10 +1,9 @@
 import { ThemeProvider } from "styled-components";
 import { theme } from "../components/styles/theme.styles"; 
-
 import AppRouter from "../routes/AppRouter";
 import { GlobalStyles } from "../components/styles/Global.styles";
-import { Footer } from "../components/footer/Footer";
 import { Header } from "../components/Header/Header";
+import { Footer } from "../components/footer/Footer";
 
 export const AppLayout = () => {
   return (
