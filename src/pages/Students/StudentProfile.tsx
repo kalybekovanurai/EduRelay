@@ -15,6 +15,7 @@ import {
   SmallCard,
 } from "./StudentProfile.styled";
 import { getStudentByIdThunk } from "../../stores/slices/OneStudent/studentThunk";
+import { LoadingPage } from "../../utils/loadingPage/LoadingPage";
 
 const getTagColor = (type: "canTeach" | "wantsToLearn") =>
   type === "canTeach" ? "#4CAF50" : "#2196F3";
@@ -32,7 +33,7 @@ export const StudentProfile = () => {
     }
   }, [id, dispatch]);
 
-  if (!student) return <p>Loading...</p>;
+  if (!student) return <LoadingPage/>;
 
   const recommendations = students.filter(
     (s) =>
