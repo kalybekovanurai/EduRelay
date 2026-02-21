@@ -1,4 +1,3 @@
-// src/components/Footer/Footer.tsx
 import {
   FooterContainer,
   FooterTop,
@@ -13,7 +12,7 @@ import {
   FooterExternalLink,
 } from "./Footer.styled";
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <FooterContainer>
       <FooterTop>
@@ -49,9 +48,7 @@ export default function Footer() {
         </FooterLinks>
       </FooterTop>
 
-      <FooterBottom>
-        © {new Date().getFullYear()} EduRelay
-      </FooterBottom>
+      <FooterBottom>© {new Date().getFullYear()} EduRelay</FooterBottom>
     </FooterContainer>
   );
-}
+};

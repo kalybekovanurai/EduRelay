@@ -1,4 +1,3 @@
-import React from "react";
 import HomeImage from "../../assets/Images/HomePageImage.avif";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import LoopIcon from "@mui/icons-material/Loop";
@@ -18,12 +17,12 @@ import {
   FeatureTitle,
   FeatureText,
 } from "./Home.styled";
-import { PrimaryButton } from "../../UI/Buttons/PrimaryButton";
+import { PrimaryButton } from "../UI/Buttons/PrimaryButton";
 
 import { useNavigate } from "react-router-dom";
 
-const Home: React.FC = () => {
-  const navigate = useNavigate(); 
+export function Home() {
+  const navigate = useNavigate();
 
   return (
     <PageWrapper>
@@ -81,6 +80,4 @@ const Home: React.FC = () => {
       </Features>
     </PageWrapper>
   );
-};
-
-export default Home;
+}

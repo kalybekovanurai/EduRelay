@@ -24,3 +24,12 @@ export const ModalContent = styled.div`
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 `;
+
+export const ModalWrapper = styled.div`
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

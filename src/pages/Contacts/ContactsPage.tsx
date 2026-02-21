@@ -5,7 +5,7 @@ import {
   PersonCard,
 } from "./Contacts.styled";
 
-export default function ContactsPage() {
+export const ContactsPage = () => {
   return (
     <ContactsWrapper>
       <Title>Наша команда</Title>
@@ -34,11 +34,9 @@ export default function ContactsPage() {
 
         <PersonCard>
           <h3>Эстебесова Назим</h3>
-          <p>
-            UI/UX Designer — дизайн страниц, визуальный стиль.
-          </p>
+          <p>UI/UX Designer — дизайн страниц, визуальный стиль.</p>
         </PersonCard>
       </TeamWrapper>
     </ContactsWrapper>
   );
-}
+};

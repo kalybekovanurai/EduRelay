@@ -13,11 +13,16 @@ export const loginThunk = createAsyncThunk<
         "ngrok-skip-browser-warning": "true",
       },
     });
-    if (!response.data?.user) {
-      return rejectWithValue("User data is missing in response");
+
+    console.log("LOGIN RESPONSE:", response.data);
+    if (!response.data) {
+      return rejectWithValue("Empty response");
     }
-console.log("LOGIN RESPONSE:", response.data);
-    return response.data;
+
+    return {
+      accessToken: response.data.accessToken || "",
+      user: response.data,
+    };
   } catch (error: any) {
     return rejectWithValue(error.response?.data?.message || "Login failed");
   }

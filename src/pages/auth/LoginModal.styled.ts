@@ -5,27 +5,19 @@ export const ModalTitle = styled.h2`
   font-size: 24px;
   color: ${({ theme }) => theme.colors.primary};
 `;
-
 export const ModalContent = styled.div`
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   background: ${({ theme }) => theme.colors.white};
   padding: 32px;
-  width: 100%;
-  max-width: 380px;
+  width: 480px;
   border-radius: 18px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  animation: fadeIn 0.25s ease;
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 `;
 
 export const CloseButton = styled.button`

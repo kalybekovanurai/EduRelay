@@ -1,7 +1,5 @@
-// src/components/About/AboutCard.tsx
 import React from "react";
 import { CardBox } from "./About.styled"
-
 
 interface AboutCardProps {
   title: string;

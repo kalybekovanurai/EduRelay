@@ -50,7 +50,6 @@ export const Tag = styled.span<{ color: string }>`
   background-color: ${({ color }) => color};
 `;
 
-//  student recommendation cards
 export const RecommendationsWrapper = styled.div`
   margin-top: 40px;
 `;
@@ -99,4 +98,5 @@ export const SmallCard = styled.div`
     font-size: 13px;
     color: ${({ theme }) => theme.colors.gray};
   }
+    
 `;

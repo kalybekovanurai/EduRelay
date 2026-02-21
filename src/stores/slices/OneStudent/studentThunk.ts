@@ -1,14 +1,15 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import type { Student } from "../../../types/Student";
+
 import { axiosInstance } from "../../../configs/axiosInstance";
+import type { Students } from "../students/type";
 
 export const getStudentByIdThunk = createAsyncThunk<
-  Student,
+  Students,
   number,
   { rejectValue: string }
 >("student/{students_id}", async (id, { rejectWithValue }) => {
   try {
-    const response = await axiosInstance.get<Student>(`/students/${id}`);
+    const response = await axiosInstance.get<Students>(`/students/${id}`);
 
     return response.data;
   } catch (error: any) {

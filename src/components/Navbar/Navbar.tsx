@@ -1,6 +1,6 @@
 import { NavContainer, NavItem, MobileMenu } from "./Navbar.styled";
 
-export default function Navbar({ isMobile, menuOpen }: any) {
+export const Navbar = ({ isMobile, menuOpen }: any) => {
   if (!isMobile) {
     return (
       <NavContainer className="desktop">
@@ -24,4 +24,4 @@ export default function Navbar({ isMobile, menuOpen }: any) {
       <NavItem to="/contacts">Contacts</NavItem>
     </MobileMenu>
   );
-}
+};

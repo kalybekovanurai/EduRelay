@@ -3,7 +3,7 @@ import AboutCard from "./AboutCard";
 import AboutImage from "../../assets/Images/AboutImage.jpg";
 import { AboutImageStyle } from "./AboutImageStyle.styled";
 
-export default function About() {
+export const About = () => {
   return (
     <AboutWrapper>
       <Title>About EduRelay</Title>
@@ -30,4 +30,4 @@ export default function About() {
       </CardsWrapper>
     </AboutWrapper>
   );
-}
+};
