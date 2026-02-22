@@ -4,10 +4,12 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { persistReducer } from "redux-persist";
 import authSlice from "./slices/auth/loginSlice";
 import studentSlice from "./slices/students/studentsSlice";
+import searchSlice from "./slices/seacrh/searchSlice"
 
 const rootReducer = combineReducers({
   auth: authSlice,
   student: studentSlice,
+  search: searchSlice,
 });
 
 const persistConfig = {

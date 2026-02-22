@@ -15,53 +15,71 @@ import {
 
 import { useAppDispatch, useAppSelector } from "../../stores/hooks";
 import { getStudentsThunk } from "../../stores/slices/students/studentsThunk";
+import { searchAIThunk } from "../../stores/slices/seacrh/searchAIThunk";
 import { LoadingPage } from "../../utils/loadingPage/LoadingPage";
 
 export const StudentsPage = () => {
   const dispatch = useAppDispatch();
-  const { students, loading } = useAppSelector((state) => state.student); 
+  const navigate = useNavigate();
+
+  const { students, loading } = useAppSelector((state) => state.student);
+  const { results: aiResults, loading: aiLoading } = useAppSelector(
+    (state) => state.search
+  );
+
   const [search, setSearch] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
-  const navigate = useNavigate();
   const studentsPerPage = 9;
 
   useEffect(() => {
     dispatch(getStudentsThunk());
   }, [dispatch]);
 
-  const filteredStudents = Array.isArray(students)
-    ? students.filter((s) => {
-        const q = search.toLowerCase();
-        return (
-          s.name.toLowerCase().includes(q) ||
-          s.major.toLowerCase().includes(q) ||
-          s.skills.toLowerCase().includes(q)
-        );
-      })
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearch(search);
+      setCurrentPage(1);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [search]);
+
+  useEffect(() => {
+    if (debouncedSearch.trim().length > 0) {
+      dispatch(searchAIThunk(debouncedSearch));
+    }
+  }, [debouncedSearch, dispatch]);
+
+  const displayedStudents =
+    debouncedSearch.trim().length > 0 ? aiResults : students;
+
+  const data = Array.isArray(displayedStudents)
+    ? displayedStudents
     : [];
-    
+
   const indexOfLast = currentPage * studentsPerPage;
   const indexOfFirst = indexOfLast - studentsPerPage;
-  const currentStudents = filteredStudents.slice(indexOfFirst, indexOfLast);
+  const currentStudents = data.slice(indexOfFirst, indexOfLast);
 
-  const totalPages = Math.ceil(filteredStudents.length / studentsPerPage);
+  const totalPages = Math.ceil(data.length / studentsPerPage);
 
   const goNext = () => {
     if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
+      setCurrentPage((prev) => prev + 1);
     }
   };
 
   const goPrev = () => {
     if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
+      setCurrentPage((prev) => prev - 1);
     }
   };
 
-    if (loading) {
-      return <LoadingPage/>;
-    }
+  if (loading || aiLoading) {
+    return <LoadingPage />;
+  }
 
   return (
     <StudentsWrapper>
@@ -72,6 +90,12 @@ export const StudentsPage = () => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+
+      {debouncedSearch && data.length === 0 && (
+        <p style={{ textAlign: "center" }}>
+          Ничего не найдено
+        </p>
+      )}
 
       <StudentsGrid>
         {currentStudents.map((student) => (
@@ -87,19 +111,21 @@ export const StudentsPage = () => {
         ))}
       </StudentsGrid>
 
-      <PaginationWrapper>
-        <button disabled={currentPage === 1} onClick={goPrev}>
-          ❮
-        </button>
+      {data.length > studentsPerPage && (
+        <PaginationWrapper>
+          <button disabled={currentPage === 1} onClick={goPrev}>
+            ❮
+          </button>
 
-        <span>
-          Page {currentPage} of {totalPages}
-        </span>
+          <span>
+            Page {currentPage} of {totalPages}
+          </span>
 
-        <button disabled={currentPage === totalPages} onClick={goNext}>
-          ❯
-        </button>
-      </PaginationWrapper>
+          <button disabled={currentPage === totalPages} onClick={goNext}>
+            ❯
+          </button>
+        </PaginationWrapper>
+      )}
 
       <Outlet />
     </StudentsWrapper>
